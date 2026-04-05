@@ -1,0 +1,422 @@
+---
+title: "EBF"
+subtitle: "Session 06: Evaluationsparadigma"
+author: "Dr. Edgar Treischl"
+#institute: "RStudio, PBC"
+date: "Last update: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    seal: false
+    #chakra: libs/remark-latest.min.js
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      titleSlideClass: [center, middle]
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+
+library(ggplot2)
+library(tidyverse)
+library(HistData)
+library(titanic)
+library(broom)
+library(tidyverse)
+library(readr)
+library(gridExtra)
+library(cowplot)
+library(jtools)
+#library(ggdag)
+library(stargazer)
+
+
+setwd("C:/Users/gu99mywo/Dropbox/Lehre/Bildung/Vorlesung Bildung EF/SoSe2021/Folien/05_Soziale_HK_F")
+
+#Simulation Shoe size
+
+
+```
+
+
+```{css, echo=FALSE}
+/* custom.css */
+.left-code {
+  color: #777;
+  width: 38%;
+  height: 92%;
+  float: left;
+}
+.right-plot {
+  width: 60%;
+  float: right;
+  padding-left: 1%;
+}
+.plot-callout {
+  height: 225px;
+  width: 450px;
+  bottom: 5%;
+  right: 5%;
+  position: absolute;
+  padding: 0px;
+  z-index: 100;
+}
+.plot-callout img {
+  width: 100%;
+  border: 4px solid #23373B;
+}
+
+```
+
+
+class: center, middle
+# Vorlesung: Empirische Bildungsforschung
+### Sitzung 6: Evaluationsparadigma
+
+
+.large[Dr. Edgar Treischl] <br>
+.large[Last update: `r Sys.Date()`]
+
+
+<br>
+<br>
+<br>
+<p align="left" style="font-size:75%;">This presentation is licensed under a CC-BY-NC 4.0 license.
+You may copy, distribute, and use the slides in your own work, as long
+as you give attribution to the original author on each slide that you use.
+Commercial use of the contents of these slides is not allowed.</p>
+<br>
+<img align="right" src="by-nceu.png" width="150px"/>
+
+---
+## Ablauf 
+
+### 1. Evaluationsparadigma der EBF
+
+### 2. Kausalität in der Bildungsforschung
+
+### 3. Experimentelle Bildungsforschung
+
+
+
+---
+# 1. Evaluationsparadigma der EBF
+## Reformen des Bildungssystems
+
+<img src="media/Bild12.png" style="width: 75%"/>
+
+
+
+---
+class: middle, center
+
+
+## Wirkungsevaluation
+### Literaturauszug: Treischl & Wolbring (2020: Kapitel 2):
+
+<p style="font-size:120%;">“Bei Evaluationen geht es um den Wert einer Sache bzw. genauer um dessen Bestimmung, wobei das zu bewertende Objekt als Evaluationsgegenstand (Evaluandum) bezeichnet wird.”</p> 
+
+<p style="font-size:120%;">“Gegenstand einer Evaluation können dabei Produkte, Prozesse, Veranstaltungen, Interventionen oder ganze Maßnahmenbündel sein, die mehr oder weniger systematisch bewertet werden.”</p> 
+
+
+
+---
+class: middle, center
+
+<p style="font-size:120%;">“Wie Kromey (2001, S. 106) erläutert, meint Evaluation im alltagssprachlichen Sinne jedwede Form der mehr oder weniger systematischen Beurteilung:”</p> 
+
+
+<p style="font-size:120%;">“Irgend etwas wird von irgend jemandem nach irgendwelchen Kriterien in irgendeiner Weise bewertet. Derselbe Sachverhalt kann – wie die Alltagserfahrung – von verschiedenen Individuen sehr unterschiedlich bis gegensätzlich eingeschätzt und beurteilt werden (Kromey 2001, S. 106).”</p> 
+
+
+
+---
+## Wissenschaftliche Evaluation
+
+### - Systematische Sammlung empirischer Evidenzen
+
+### - Systematik und präzise Dokumentation
+
+### - Intersubjektive Nachprüfbarkeit
+
+### - Identifikation von Ursache und Wirkung
+
+
+
+---
+class: middle, center
+
+
+<p style="font-size:120%;">“Das wesentliche Ziel vieler Evaluationen entspricht dieser engeren Definition des Evaluationsbegriffs, nämlich Antworten auf Fragen der kausalen Inferenz zu geben:”</p> 
+
+<p style="font-size:120%;">“Die Erfassung und Bewertung von Wirkungen und ihre kausale Ursachenzuschreibung sind die zentralen Aufgaben von Evaluation“ (Stockmann 2006, S. 106; Hervorhebung im Orig.).”</p> 
+
+
+
+---
+## Funktionen von Evaluationen 
+
+(siehe Treischl & Wolbring 2020:21-24)
+
+### - Erkenntnisfunktion
+
+### - Kontrollfunktion
+
+### - Transparenz und Dialogfunktion
+
+### - Legitimationsfunktion
+
+
+
+
+---
+## Evaluationsstandards
+
+### - Systematische Untersuchung
+
+### - Kompetenz
+
+### - Integrität und Ehrlichkeit
+
+### - Respektvoller Umgang mit Menschen
+
+### - Verantwortung gegenüber der öffentlichen Wohlfahrt
+
+
+
+---
+# 2. Kausalität in der Bildungsforschung
+
+<img src="media/Bild3.png" style="width: 95%"/>
+
+
+
+---
+## Evaluation anhand von Beobachtungsdaten
+
+
+<img src="media/Bild4.png" style="width: 95%"/>
+
+
+
+---
+## Messung kausaler Effekte
+
+
+<img src="media/Bild5.png" style="width: 95%"/>
+
+
+> ADD APPLES, BUT DON'T ADD, DIVIDE, OR COMPARE APPLES AND ORANGES! 🧛
+
+
+---
+## The Fundamental Problem of Causal Inference: I
+
+<img src="media/Bild13.png" style="width: 95%"/>
+
+
+---
+## The Fundamental Problem of Causal Inference: II
+
+<img src="media/Bild1.png" style="width: 95%"/>
+
+
+
+
+---
+class: middle, center
+
+## Etwas formaler (1):
+
+### - Sei D eine Dummy-Variable (d.h. eine binär kodierte Variable), welche das Auftreten bzw. Wegbleiben eines Stimulus (Ursache) anzeigt.
+
+### - Der kausale Effekt δ ist definiert als Differenz zwischen Y¹, dem Zustand der Zielvariable Y nach Auftreten (D = 1) der Ursache, und Y°, dem Zustand der Zielvariable ohne Auftreten (D = 0) der Ursache
+
+### - δ = Y¹ - Y°
+
+
+---
+class: middle, center
+
+## Etwas formaler (2):
+
+### - Eine Person kann nicht gleichzeitig ein Treatment bekommen und in der Kontrollgruppe sein.
+
+### - Ergo: Messung von Kausalität auf der Mikroebene des Individuums ist damit selbst im Experiment ausgeschlossen.
+
+### - Problem: Wir sind auf der Suche nach einer kontrafaktischen Annäherungen eines (unbeobachtes) Ergebnisses: Welchen Schulerfolg hätte Person i gehabt, wenn die Person die Klasse B anstelle der Klasse A besucht hätte?
+
+
+
+---
+## Kausaler Effekt: Messung des Average Treatment Effects
+
+<img src="media/Bild2.png" style="width: 95%"/>
+
+
+---
+class: middle, center
+
+<p style="font-size:120%;">Dies korrespondiert mit dem <b>Prinzip von Compare Like with Like</b>: “Durch die Randomisierung ist bei hinreichend großen Gruppen von einer Gleichverteilung in der Kontroll- und Versuchsgruppe (Bsp: ca. 50% Männer/Frauen) in allen möglichen Drittvariablen auszugehen.”</p> 
+
+<p style="font-size:120%;">“Randomisierung umgeht somit das Problem der unbeobachteten Heterogenität (Gruppen unterscheiden sich ohne dass wir es beobachtet haben) von Gruppen. Die Randomisierung hilft uns auch bei methodischen Problemen (wie bspw. das Problem von Scheinkorrelationen).”</p> 
+
+
+
+---
+## Hat die Randomisierung funktioniert?
+
+<img src="media/Bild6.png" style="width: 75%"/>
+
+
+
+
+---
+# 3. Experimentelle Bildungsforschung
+
+- Zufallsbedingte Aufteilung (Randomisierung) auf Kontroll- und Versuchsgruppe (Treatment)
+
+- Zufällige Aufteilung auf beide Gruppen kontrolliert für alle Drittvariablen (Compare Like with Like)
+
+- Manipulation: Vermutete Ursache (= Stimulus) in der Versuchsgruppe
+
+- Manipulation: Keine Ursache (= kein Stimulus) in der Kontrollgruppe
+
+- Werte in der Versuchsgruppe die über der Schwelle der Zufallsvarianz (t-Test) liegen werden auf den Stimulus zurückgeführt und als kausaler Effekt interpretiert.
+
+
+
+---
+## Experimentelle Forschungsdesigns: Beispiel Weiterbildungsmaßnahme
+
+
+
+| Zuweisung          |         X          | Messung $t_1$        |
+|--------------------|--------------------|----------------------|
+|     R<sup>1</sup>  |   Kontrollgruppe   |       O<sup>2</sup>  |
+|     R              |   Versuchsgruppe   |       O              |
+
+
+
+.footnote[
+[1] Randomisierung
+
+[2] Messung (Observation)
+]
+
+
+
+---
+## Quasi-experimentelles Design
+
+- Zuordnung auf Kontroll- und Versuchsgruppe erfolgt nicht durch Randomisierung
+
+- Quasi-Experimente: Stimulus wird gegeben, Zuordnung erfolgt selbst durch die Forschungsobjekte
+
+- Evaluationsforschung basiert oftmals auf quasi-experimenteller Versuchsanordnungen (Probleme?)
+
+- Notation Quasi-Experiment:
+
+
+| Zuweisung |         X          | Messung $t_1$ |
+|-----------|--------------------|---------------|
+|           |   Kontrollgruppe   |       O       |
+|           |   Versuchsgruppe   |       O       |
+
+
+
+> “Experiments in the social sciences? What should we and what should we not do. The Little-Albert-Experiment.”
+
+
+
+---
+## Kaum experimentelle Forschungsdesigns in der EBF
+
+### Häufige Bedenken von Stakeholdern:
+
+1. Experimente sind häufig nicht ethisch vertretbar.
+
+2. Experimente sind nicht praktisch umsetzbar sind.
+
+3. Experimente sind künstlich aufgrund der Künstlichkeit des Settings.
+
+4. Experimente basieren auf einer geringen Fallzahl und die Ergebnisse sind nicht auf andere Kontexte übertragbar.
+
+
+---
+## Einwände zum Teil nicht zutreffend, weil:
+
+1. Ethikboard müssen Verstöße gegen ethische Einwände einlegen.
+
+2. Experimente sind auch in der Bildungsforschung möglich.
+
+3. Künstlichkeit betrifft in erster Instanz Laborexperimente.
+
+4. Geringe Fallzahl ist kein allgemeines Problem experimenteller Forschung.
+
+
+---
+## "REPRÄSENTATIVITÄT"
+
+<img src="media/Bild7.png" style="width: 95%"/>
+
+
+
+---
+class: middle, center
+
+<p style="font-size:120%;">Statt dessen müssen wir uns über die interne und die externe Validität unserer Evaluationsbefunde Gedanken machen! Keine Ahnung was interne oder externe Validität ist? 🧐 Ein kurzer Auszug aus der Literatur zur Vertiefung (Treischl & Wolbring 2020, Kapitel: 6).</p> 
+
+<p style="font-size:120%;">“Der Begriff der internen Validität zielt darauf ab, inwiefern ein Effekt tatsächlich kausal auf das Treatment zurückführbar ist.”</p> 
+
+<p style="font-size:120%;">“Anders ausgedrückt, bemisst die interne Validität damit, inwieweit mögliche Störfaktoren durch das gewählte Forschungsdesign ausgeschlossen werden oder ob nicht doch alternative Erklärungen einen Befund hervorgebracht haben könnten.”</p> 
+
+
+---
+class: middle, center
+
+<p style="font-size:120%;">“Im Kern beziehen sich Fragen nach der internen Validität also auf die Belastbarkeit von Wirkungsaussagen im Zuge einer Evaluation.”</p> 
+
+<p style="font-size:120%;">“Neben Fragen der internen Validität stellt sich auch bei Evaluationen die Frage nach der Generalisierbarkeit, also der externen Validität empirischer Befunde. Dabei gilt es vier Dimensionen der Generalisierbarkeit zu berücksichtigen.”</p> 
+
+---
+## UTOS: Dimensionen der Generalisierbarkeit nach Cronbach (1982)
+
+### - Versuchspersonen (Units)
+
+### - Interventionen (Treatments)
+
+### - Messungen (Observations)
+
+### - Kontexte (Settings)
+
+
+
+---
+## Zusammenspiel interne und externe Validität
+
+
+<img src="media/Bild11.png" style="width: 95%"/>
+
+
+
+---
+
+# Zusammenfassung
+
+### - EBF ist Teil eines Evaluationsparadigmas (Reformen, Unterrichtsmethoden etc.)
+
+### - Wirkungsevaluation = Kausalanalyse
+
+### - Vorteil von Randomisierung (Eliminierung von Störvariablen)
+
+### - Bedenken gegen experimentelle Forschungsdesigns in der EBF
+
+### - Güte experimentelle Forschungsdesigns: Interne und externe Validität
+
+
+
+
