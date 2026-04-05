@@ -1,2 +1,0 @@
-				<section data-background-iframe="https://www.youtube.com/embed/GelInbc4tlg" data-background-interactive>
-				</section>
